@@ -56,11 +56,11 @@ int main() {
         std::cout << "you want play?" << " y/n " << std::endl;
         char nr{};
         std::cin >> nr;
-        if (nr ==  'y') {
-            mygame();
-        };
-        if (nr == 'n') {
-            break;
+        switch (nr) {
+            case('y') : mygame();
+            case('n') : break;
+            default:
+                std::cout << " non letter " << '\n';
         }
     }
 }
