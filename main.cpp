@@ -7,7 +7,7 @@ std::string getrandomword() {
     std::vector<std::string> words{"apple", "milk", "cheese", "bober"};
     std::random_device dev;
     std::mt19937 ran(dev());
-    std::uniform_int_distribution<std::mt19937::result_type> dist(0,5);
+    std::uniform_int_distribution<std::mt19937::result_type> dist(words.size() - 1);
     auto max{dist(ran)};
     return words[max];
 };
@@ -42,7 +42,8 @@ void mygame() {
 
         if (word == myword) {
             std::cout << "you won" << '\n';
-            win == true;
+            win = true;
+            break;
         }
         if (x == 5) {
             std::cout << "you lose" << '\n';
